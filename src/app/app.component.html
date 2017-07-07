@@ -17,5 +17,6 @@
     <h2><a target="_blank" href="http://angularjs.blogspot.ca/">Angular blog</a></h2>
   </li>
 </ul>
-
+<div>
+  <p *ngFor="let item of items | async">{{item.firstName}} {{item.lastName}}</p></div>
 <router-outlet></router-outlet>
