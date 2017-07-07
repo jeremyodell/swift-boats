@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { SwiftGridComponent } from './swift-grid/swift-grid.component';
+import {AgGridModule} from "ag-grid-angular/main";
 
 export const firebaseConfig = {
     apiKey: "AIzaSyCnMbqBgTro4VfRjiOg2tFNlRs63TcxdHw",
@@ -20,14 +22,16 @@ export const firebaseConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SwiftGridComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AgGridModule.withComponents([])
   ],
   providers: [],
   bootstrap: [AppComponent]
