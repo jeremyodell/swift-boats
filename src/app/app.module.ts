@@ -8,15 +8,15 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { SwiftGridComponent } from './swift-grid/swift-grid.component';
-import {AgGridModule} from "ag-grid-angular/main";
+import {AgGridModule} from 'ag-grid-angular/main';
 
 export const firebaseConfig = {
-    apiKey: "AIzaSyCnMbqBgTro4VfRjiOg2tFNlRs63TcxdHw",
-    authDomain: "swift-boats.firebaseapp.com",
-    databaseURL: "https://swift-boats.firebaseio.com",
-    projectId: "swift-boats",
-    storageBucket: "swift-boats.appspot.com",
-    messagingSenderId: "990014182728"
+    apiKey: 'AIzaSyCnMbqBgTro4VfRjiOg2tFNlRs63TcxdHw',
+    authDomain: 'swift-boats.firebaseapp.com',
+    databaseURL: 'https://swift-boats.firebaseio.com',
+    projectId: 'swift-boats',
+    storageBucket: 'swift-boats.appspot.com',
+    messagingSenderId: '990014182728'
 };
 
 
