@@ -1,3 +1,8 @@
 
-<app-swift-grid></app-swift-grid>
-<router-outlet></router-outlet>
+<div>
+  <md-progress-bar *ngIf="isFetching | async" color="accent" mode="indeterminate"></md-progress-bar>
+  <app-nav></app-nav>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

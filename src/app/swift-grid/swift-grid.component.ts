@@ -15,9 +15,13 @@ export class SwiftGridComponent {
   item:  FirebaseObjectObservable<any>;
 
   constructor(public afAuth: AngularFireAuth, public af: AngularFireDatabase) {
-    this.items = af.list('/swift-boat-vet', {});
+    this.items = af.list('/vets', {});
     this.gridOptions = <GridOptions>{};
     this.gridOptions.columnDefs = [
+      {
+        headerName: 'PCF',
+        field: 'boadId',
+      },
       {
         headerName: 'First Name',
         field: 'firstName',
@@ -39,8 +43,13 @@ export class SwiftGridComponent {
         width: 100
       },
       {
-        headerName: 'Dates',
-        field: 'dates',
+        headerName: 'Start Date',
+        field: 'startDate',
+        width: 100
+      },
+      {
+        headerName: 'End Date',
+        field: 'endDate',
         width: 100
       },
       {
@@ -52,17 +61,13 @@ export class SwiftGridComponent {
         headerName: 'Comments',
         field: 'comment',
       },
-      {
-        headerName: 'ID',
-        field: 'id',
-      }
 
     ];
   }
 
   public onCellDoubleClicked(event: any): void {
     console.log(event);
-    this.item = this.af.object('/swift-boat-vet/' + event.data.$key);
+    this.item = this.af.object('/vets/' + event.data.$key);
   }
 
 }
