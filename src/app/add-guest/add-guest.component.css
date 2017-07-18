@@ -1,0 +1,28 @@
+.text-danger {
+  color: red;
+}
+
+.header {
+  text-align: center;
+  font-size: xx-large;
+}
+
+.row-padding {
+  padding: 10px;
+}
+
+.phone-width {
+  width: 70px;
+}
+
+div {
+  height: 40px;
+}
+
+input {
+  height: 30px;
+}
+
+/* #add-guest{
+    padding-top: 20px;
+} */

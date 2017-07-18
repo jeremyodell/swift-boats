@@ -1,0 +1,178 @@
+<form novalidate [formGroup]="addGuestForm" (ngSubmit)="onSubmit()">
+  <div fxLayout id="add-guest">
+    <div fxFlex="11%" fxLayoutAlign="center">First Name :
+      <div fxLayoutAlign="right" class="header" *ngIf="addGuestForm.controls.firstName.errors && addGuestForm.controls.firstName.errors.required &&
+     (addGuestForm.controls.firstName.dirty || addGuestForm.controls.firstName.touched)" class="text-danger">**</div>
+    </div>
+    <input fxFlex="11%" type="text" formControlName="firstName">
+
+    <div fxFlex="12%" fxLayoutAlign="center">Middle Name :
+      <div class="header" *ngIf="addGuestForm.controls.middleName.errors && addGuestForm.controls.middleName.errors.required &&
+     (addGuestForm.controls.middleName.dirty || addGuestForm.controls.middleName.touched)" class="text-danger">**</div>
+    </div>
+    <input fxFlex="12%" type="text" formControlName="middleName">
+    <div fxFlex="12%" fxLayoutAlign="center">Last Name :
+      <div class="header" *ngIf="addGuestForm.controls.lastName.errors && addGuestForm.controls.lastName.errors.required &&
+     (addGuestForm.controls.lastName.dirty || addGuestForm.controls.lastName.touched)" class="text-danger">**</div>
+    </div>
+    <input fxFlex="12%" type="text" formControlName="lastName">
+    <div fxFlex="12%" fxLayoutAlign="center">Suffix :
+      <div class="header" *ngIf="addGuestForm.controls.suffix.errors && addGuestForm.controls.suffix.errors.required &&
+     (addGuestForm.controls.suffix.dirty || addGuestForm.controls.suffix.touched)" class="text-danger">**</div>
+    </div>
+    <div fxFlex="12%">
+      <select formControlName="suffix">
+            <option value="">Please select a Suffix</option>
+            <option *ngFor="let suffix of suffixList"
+                    [value]="suffix">{{suffix}}
+            </option>
+          </select>
+    </div>
+  </div>
+  <div fxLayout>
+    <div fxFlex="30%" fxLayoutAlign="center">Your current home street address:
+      <div class="header" *ngIf="addGuestForm.controls.streetAddress.errors && addGuestForm.controls.streetAddress.errors.required &&
+     (addGuestForm.controls.streetAddress.dirty || addGuestForm.controls.streetAddress.touched)" class="text-danger">**</div>
+    </div>
+    <input fxFlex="50%" type="text" formControlName="streetAddress">
+  </div>
+  <div fxLayout>
+    <div fxFlex="10%" fxLayoutAlign="center">City:
+      <div class="header" *ngIf="addGuestForm.controls.city.errors && addGuestForm.controls.city.errors.required &&
+     (addGuestForm.controls.city.dirty || addGuestForm.controls.city.touched)" class="text-danger">**</div>
+    </div>
+    <input fxFlex="20%" type="text" formControlName="city">
+    <div fxFlex="10%" fxLayoutAlign="center">State:
+      <div class="header" *ngIf="addGuestForm.controls.state.errors && addGuestForm.controls.state.errors.required &&
+     (addGuestForm.controls.state.dirty || addGuestForm.controls.state.touched)" class="text-danger">**</div>
+    </div>
+    <input fxFlex="20%" type="text" formControlName="state">
+    <div fxFlex="10%" fxLayoutAlign="center">Zip code, 9 digit:
+      <div class="header" *ngIf="addGuestForm.controls.zipCode5.errors && addGuestForm.controls.zipCode5.errors.required &&
+     (addGuestForm.controls.zipCode5.dirty || addGuestForm.controls.zipCode5.touched)" class="text-danger">**</div>
+    </div>
+    <input fxFlex="20%" type="number" formControlName="zipCode5">-
+    <input fxFlex="20%" type="number" formControlName="zipCode4">
+  </div>
+  <div fxLayout>
+    <div fxFlex="10%" fxLayoutAlign="center">Home phone number: </div>
+    (
+    <div class="header" *ngIf="addGuestForm.controls.homePhoneAreaCode.errors && addGuestForm.controls.homePhoneAreaCode.errors.required &&
+     (addGuestForm.controls.homePhoneAreaCode.dirty || addGuestForm.controls.homePhoneAreaCode.touched)" class="text-danger">**</div>
+    <input fxFlex="10%" type="number" formControlName="homePhoneAreaCode">)
+    <div class="header" *ngIf="addGuestForm.controls.homePhonePrefix.errors && addGuestForm.controls.homePhonePrefix.errors.required &&
+     (addGuestForm.controls.homePhonePrefix.dirty || addGuestForm.controls.homePhonePrefix.touched)" class="text-danger">**</div>
+    <input fxFlex="10%" type="number" formControlName="homePhonePrefix">-
+    <div class="header" *ngIf="addGuestForm.controls.homePhoneLineNumber.errors && addGuestForm.controls.homePhoneLineNumber.errors.required &&
+     (addGuestForm.controls.homePhoneLineNumber.dirty || addGuestForm.controls.homePhoneLineNumber.touched)" class="text-danger">**</div>
+    <input fxFlex="10%" type="number" formControlName="homePhoneLineNumber">
+    <div fxFlex="10%" fxLayoutAlign="center">Cell phone number: </div>
+    (
+    <div class="header" *ngIf="addGuestForm.controls.cellPhoneAreaCode.errors && addGuestForm.controls.cellPhoneAreaCode.errors.required &&
+     (addGuestForm.controls.cellPhoneAreaCode.dirty || addGuestForm.controls.cellPhoneAreaCode.touched)" class="text-danger">**</div>
+    <input fxFlex="10%" type="number" formControlName="cellPhoneAreaCode">)
+    <div class="header" *ngIf="addGuestForm.controls.cellPhonePrefix.errors && addGuestForm.controls.cellPhonePrefix.errors.required &&
+     (addGuestForm.controls.cellPhonePrefix.dirty || addGuestForm.controls.cellPhonePrefix.touched)" class="text-danger">**</div>
+    <input fxFlex="10%" type="number" formControlName="cellPhonePrefix">-
+    <div class="header" *ngIf="addGuestForm.controls.cellPhoneLineNumber.errors && addGuestForm.controls.cellPhoneLineNumber.errors.required &&
+     (addGuestForm.controls.cellPhoneLineNumber.dirty || addGuestForm.controls.cellPhoneLineNumber.touched)" class="text-danger">**</div>
+    <input fxFlex="10%" type="number" formControlName="cellPhoneLineNumber">
+  </div>
+  <div fxLayout>
+    <div fxFlex="40%" fxLayoutAlign="center">e-mail address:
+      <div class="header" *ngIf="addGuestForm.controls.email.errors && addGuestForm.controls.email.errors.required &&
+     (addGuestForm.controls.email.dirty || addGuestForm.controls.email.touched)" class="text-danger">**</div>
+    </div>
+    <input fxFlex="20%" type="text" formControlName="email">
+  </div>
+  <div fxLayout>
+    <div fxFlex="40%" fxLayoutAlign="center">Rank/Rate while serving in Vietnam:
+      <div class="header" *ngIf="addGuestForm.controls.rankRate.errors && addGuestForm.controls.rankRate.errors.required &&
+     (addGuestForm.controls.rankRate.dirty || addGuestForm.controls.rankRate.touched)" class="text-danger">**</div>
+    </div>
+    <input fxFlex="20%" type="text" formControlName="rankRate">
+  </div>
+  <div fxLayout>
+    <div fxFlex="40%" fxLayoutAlign="center">Swiftboats you served on:
+      <div class="header" *ngIf="addGuestForm.controls.swiftBoats.errors && addGuestForm.controls.swiftBoats.errors.required &&
+     (addGuestForm.controls.swiftBoats.dirty || addGuestForm.controls.swiftBoats.touched)" class="text-danger">**</div>
+    </div>
+    <input fxFlex="20%" type="text" formControlName="swiftBoats">
+  </div>
+  <div fxLayout>
+    <div fxFlex="40%" fxLayoutAlign="center">What were your dates of service on these boats (month/year to month/year):
+      <div class="header" *ngIf="addGuestForm.controls.datesOfService.errors && addGuestForm.controls.datesOfService.errors.required &&
+     (addGuestForm.controls.datesOfService.dirty || addGuestForm.controls.datesOfService.touched)" class="text-danger">**</div>
+    </div>
+    <input fxFlex="30%" type="text" formControlName="datesOfService">
+  </div>
+  <div fxLayout>
+    <div fxFlex="100%" fxLayoutAlign="center">Bases you served at in Vietnam: </div>
+  </div>
+  <div fxLayout>
+    <div fxFlex="20%" fxLayoutAlign="center">I Corps : </div>
+    <input fxFlex="10%" type="checkbox" formControlName="corpsOneCuaViet" text>Cua Viet
+    <input fxFlex="10%" type="checkbox" formControlName="corpsOneHue">Hue
+    <input fxFlex="10%" type="checkbox" formControlName="corpsOneDaNang">Da Nang
+    <input fxFlex="10%" type="checkbox" formControlName="corpsOneChuLai">Chu Lai
+  </div>
+  <div fxLayout>
+    <div fxFlex="20%" fxLayoutAlign="center">II Corps : </div>
+    <input fxFlex="10%" type="checkbox" formControlName="corpsTwoQuiNhon">Qui Nhon
+    <input fxFlex="10%" type="checkbox" formControlName="corpsTwoCamRanhBay">Cam Ranh Bay
+  </div>
+  <div fxLayout>
+    <div fxFlex="20%" fxLayoutAlign="center">III Corps : </div>
+    <input fxFlex="10%" type="checkbox" formControlName="corpsThreeCatLo">Cat Lo
+  </div>
+  <div fxLayout>
+    <div fxFlex="20%" fxLayoutAlign="center">IV Corps : </div>
+    <input fxFlex="10%" type="checkbox" formControlName="corpsFourSeaFloat">Sea Float
+    <input fxFlex="10%" type="checkbox" formControlName="corpsFourNamCan">Nam Can
+    <input fxFlex="10%" type="checkbox" formControlName="corpsFourAnThoi">An Thoi
+  </div>
+  <div fxLayout>
+    <div fxFlex="20%" fxLayoutAlign="center">Did you stay in the military and retire?
+      <div class="header" *ngIf="addGuestForm.controls.retiredInMilitary.errors && addGuestForm.controls.retiredInMilitary.errors.required &&
+     (addGuestForm.controls.retiredInMilitary.dirty || addGuestForm.controls.retiredInMilitary.touched)" class="text-danger">**</div>
+    </div>
+    <select fxFlex="20%" formControlName="retiredInMilitary">
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+          </select>
+    <div fxFlex="20%" fxLayoutAlign="center"> Branch of the military you retired from?
+      <div class="header" *ngIf="addGuestForm.controls.retiredFromBranch.errors && addGuestForm.controls.retiredFromBranch.errors.required &&
+     (addGuestForm.controls.retiredFromBranch.dirty || addGuestForm.controls.retiredFromBranch.touched)" class="text-danger">**</div>
+    </div>
+    <select fxFlex="20%" formControlName="retiredFromBranch">
+            <option *ngFor="let mb of militaryBranches"
+                    [value]="mb">{{mb}}
+            </option>
+          </select>
+  </div>
+  <div fxLayout>
+    <div fxFlex="20%" fxLayoutAlign="center">Rank/Rate you retired at?
+      <div class="header" *ngIf="addGuestForm.controls.rankRateRetired.errors && addGuestForm.controls.rankRateRetired.errors.required &&
+     (addGuestForm.controls.rankRateRetired.dirty || addGuestForm.controls.rankRateRetired.touched)" class="text-danger">**</div>
+    </div>
+    <input fxFlex="20%" type="number" formControlName="rankRateRetired">
+    <div fxFlex="20%" fxLayoutAlign="center">Year you retired?
+      <div class="header" *ngIf="addGuestForm.controls.yearRetired.errors && addGuestForm.controls.yearRetired.errors.required &&
+     (addGuestForm.controls.yearRetired.dirty || addGuestForm.controls.yearRetired.touched)" class="text-danger">**</div>
+    </div>
+    <input fxFlex="20%" type="text" formControlName="yearRetired">
+  </div>
+
+  <div class="header" style="text-decoration: underline; font-weight: bold;">
+    Comment Field
+  </div>
+  <div class="header">
+    In the box below, I encourage you to tell me about your crew, their locations, things that happened to you, etc, etc:
+  </div>
+
+  <div fxLayout fxLayoutAlign="center" style="height: auto">
+    <textarea rows="7" fxFlex="50%" cols="100" formControlName="comments"></textarea>
+  </div>
+
+  <pre>{{addGuestForm.value | json}}</pre>
+</form>
