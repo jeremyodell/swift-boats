@@ -1,0 +1,12 @@
+<div style="width: 900px;">
+  <ag-grid-angular #agGrid style="width: 100%; height: 700px;" class="ag-material"
+                   [gridOptions]="gridOptions"
+                   [rowData]="allVets | async"
+                   (cellDoubleClicked)="onCellDoubleClicked($event)"
+                   enableColResize
+                   enableSorting
+                   enableFilter
+                   rowHeight="44"
+                   rowSelection="multiple">
+  </ag-grid-angular>
+</div>

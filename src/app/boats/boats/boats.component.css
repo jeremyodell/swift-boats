@@ -1,0 +1,6 @@
+.boat-card {
+  flex: 1 1 auto;
+}
+.boat-fill-remaining-space {
+  flex: 1 1 auto;
+}

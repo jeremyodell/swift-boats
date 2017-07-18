@@ -1,3 +1,15 @@
-<p>
-  boats works!
-</p>
+<div fxLayout="column" fxLayoutAlign="space-around stretch" >
+<md-card class="example-card">
+
+    <md-toolbar class="boat-fill-remaining-space" color="warn">
+      <span>Swift Boats</span></md-toolbar>
+
+  <md-card-content>
+    <div>
+      <ag-grid-angular #agGrid style="width: 100%; height: 700px;" class="ag-material" [gridOptions]="gridOptions" [rowData]="allSwiftBoats | async"
+        (cellDoubleClicked)="onCellDoubleClicked($event)" enableColResize enableSorting enableFilter rowHeight="44" rowSelection="multiple">
+      </ag-grid-angular>
+    </div>
+  </md-card-content>
+</md-card>
+</div>

@@ -1,3 +1,5 @@
+import { SailorsComponent } from './sailors/sailors.component';
+import { BoatsComponent } from './boats/boats/boats.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -7,8 +9,8 @@ import { PageNotFoundComponent } from './page-not-found.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'dashboard', },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'characters', loadChildren: 'app/characters/characters.module#CharactersModule' },
-  { path: 'planets', loadChildren: 'app/planets/planets.module#PlanetsModule' },
+  { path: 'swift-boats', component: BoatsComponent },
+  { path: 'sailors', component: SailorsComponent },
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent },
 ];
 

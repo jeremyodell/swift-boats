@@ -11,7 +11,8 @@ import {
   MdSelectModule,
   MdTabsModule,
   MdToolbarModule,
-  MdSnackBarModule
+  MdSnackBarModule,
+  MdCardModule,
 } from '@angular/material';
 const modules = [
   CommonModule,
@@ -27,6 +28,7 @@ const modules = [
   MdSnackBarModule,
   MdTabsModule,
   MdToolbarModule,
+  MdCardModule
 ];
 
 @NgModule({

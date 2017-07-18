@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 
 import { SharedModule } from '../shared/shared.module';
 import { NavComponent } from './nav/nav.component';
+import { DataService } from './data/data.service';
 import { throwIfAlreadyLoaded } from './module-import-guard';
 
 @NgModule({
@@ -19,8 +20,7 @@ import { throwIfAlreadyLoaded } from './module-import-guard';
     NavComponent,
   ],
   providers: [
-    //  ConfigService,
-    //  DataService,
+    DataService,
   ],
 })
 export class CoreModule {

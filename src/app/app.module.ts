@@ -1,3 +1,4 @@
+import { CoreModule } from './core/core.module';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { SharedModule } from './shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,6 +15,7 @@ import {AgGridModule} from 'ag-grid-angular/main';
 import { BoatsComponent } from './boats/boats/boats.component';
 import { NavComponent } from './core/nav/nav.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { SailorsComponent } from './sailors/sailors.component';
 
 export const firebaseConfig = {
     apiKey: 'AIzaSyCnMbqBgTro4VfRjiOg2tFNlRs63TcxdHw',
@@ -30,9 +32,9 @@ export const firebaseConfig = {
     AppComponent,
     SwiftGridComponent,
     BoatsComponent,
-    NavComponent,
     DashboardComponent,
     PageNotFoundComponent,
+    SailorsComponent,
 
   ],
   imports: [
@@ -43,6 +45,7 @@ export const firebaseConfig = {
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AgGridModule.withComponents([]),
+    CoreModule,
     SharedModule
   ],
   providers: [],
